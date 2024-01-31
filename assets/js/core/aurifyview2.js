@@ -71,6 +71,7 @@ async function fetchData() {
         var currentSilverBuy = silverBuy;
         var currentSilverSell = silverSell;
 
+
         function updatePrice() {
             var newGoldBuy = goldBuy;
             var newGoldSell = goldSell;
@@ -266,6 +267,7 @@ async function displaySpreadValues() {
     }
 }
 
+displaySpreadValues();
 
 // Function to read data from the Firestore collection
 async function readData() {

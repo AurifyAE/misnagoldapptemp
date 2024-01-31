@@ -48,7 +48,7 @@
 
     body {
       margin: 0;
-      padding: 25px;
+      padding: 15px;
       font-family: "arial", heletica, sans-serif;
       font-size: 24px;
       background-image: url('./assets/img/SL_121219_26010_26.jpg');
@@ -59,13 +59,14 @@
       -ms-animation: 20s linear 0s normal none infinite animate;
       -o-animation: 20s linear 0s normal none infinite animate;
       animation: 20s linear 0s normal none infinite animate;
-
       color: #005043;
       height: 100vh;
     }
 
     .row {
       padding: 0px;
+      display: flex;
+      flex-direction: column;
     }
 
     .card-logo {
@@ -102,59 +103,6 @@
       display: none;
     }
 
-    .card-table {
-      border-collapse: collapse;
-      border-spacing: 10px;
-      opacity: 0.9;
-    }
-
-    table {
-      display: inline-table;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin-left: 0px;
-      font-size: 1.8vw;
-      color: #005043;
-    }
-
-    .card-table tbody {
-      margin-top: 10px;
-
-    }
-
-    .card-table tr {
-      background-color: #f9f9f9;
-      /* Light gray background for odd rows */
-    }
-
-    .card-table tbody tr:nth-child(even) {
-      background-color: #e6e6e6;
-      /* Dark gray background for even rows */
-    }
-
-
-    .card-table th {
-      background-color: #005043;
-      color: white;
-    }
-
-
-    .card-table th,
-    .card-table td {
-      padding: 12px;
-      text-align: center;
-    }
-
-    .card-table td {
-      font-weight: bold;
-    }
-
-    /* Hover effect for better user experience */
-    .card-table tbody tr:hover {
-      background-color: #d3d3d3;
-      /* Lighter gray on hover */
-    }
 
     .date-time {
       display: flex;

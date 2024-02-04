@@ -62,11 +62,73 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-color: #005043;
-        color: white;
+        background-color:transparent ;
+        color: #005043;
         width: 100%;
         margin-top: 12px;
       }
+
+      .card-table {
+      border-collapse: collapse;
+      border-spacing: 5px;
+      opacity: 0.9;
+      width: 100%;
+    }
+
+    table {
+      display: inline-table;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-left: 0px;
+      font-size: 16px;
+      color: #005043;
+    }
+
+    .card-table tbody {
+      margin-top: 12px;
+
+    }
+    .card-table  tr {
+      background-color: #f9f9f9;
+      /* Light gray background for odd rows */
+    }
+
+    .card-table tbody tr:nth-child(even) {
+      background-color: #e6e6e6;
+      /* Dark gray background for even rows */
+    }
+
+
+
+    .card-table th {
+      background-color:#005043;
+      color: white;
+  
+  
+    }
+
+    .card-table tbody td {
+      font-size: 12px;
+    }
+
+    .card-table th,
+    .card-table td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .card-table td {
+      font-weight: bold;
+      font-size: 12px;
+    }
+
+    /* Hover effect for better user experience */
+    .card-table tbody tr:hover {
+      background-color: #d3d3d3;
+      /* Lighter gray on hover */
+    }
+
 
       .data {
         display: flex;
@@ -155,11 +217,12 @@
     <div class="container-fluid pt-0">
       <div class="row">
         <!-- GOLD -->
-        <div class="label">
-          <p>Gold</p>
-          <h5 style="color: white;">oz</h5>
-        </div>
+     
         <div class="data">
+          <div class="label">
+            <p>Gold</p>
+            <h5 style="color: #005043;">oz</h5>
+          </div>
           <div class="buy">
             <div class="buy-label">
               <p>BUY</p>
@@ -189,11 +252,12 @@
 
         <!-- silver -->
         <div class="row">
-          <div class=" label">
-            <p>Silver</p>
-            <h5 style="color: white;">oz</h5>
-          </div>
+
           <div class="data">
+            <div class=" label">
+              <p>Silver</p>
+              <h5 style="color: #005043;">oz</h5>
+            </div>
             <div class="buy">
               <div class="buy-label">
                 <p>BUY</p>
@@ -221,7 +285,31 @@
             </div>
           </div>
         </div>
+        
 
+      </div>
+      <div style="margin-left:-10px; margin-top: 10px; width: 107%;">
+        <div class="row">
+          <div >
+              <div class="card-table">
+                <table>
+                  <thead style="margin-bottom: 0px;">
+                    <tr style="font-size: 12px;">
+                      <th colspan="2">COMMODITY</th>
+                      <th>UNIT</th>
+                      <th>BUY (<span id="currencySymbol">AED</span>)</th>
+                      <th>SELL (<span id="currencySymbol">AED</span>)</th>
+                    </tr>
+                    <tr style="height: 8px;background-color: transparent;"></tr>
+                  </thead>
+                  
+                  <tbody id="tableBodyTV">
+                    <!-- Table body content will be dynamically updated here -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+      </div>   
       </div>
     </div>
   </main>
@@ -260,7 +348,14 @@
   <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
   <script src="../assets/js/plugins/chartjs.min.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+  <script type="module" src="./config/db.js"></script>
+  <script type="module" src="./assets/js/core/dashboardDB.js"></script>
+  <script type="module" src="./assets/js/core/spotrateDB.js"></script>
+  <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
 
 
   <script>
@@ -461,13 +556,7 @@
 
 
 
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
-  <script type="module" src="./config/db.js"></script>
-  <script type="module" src="./assets/js/core/dashboardDB.js"></script>
-  <script type="module" src="./assets/js/core/spotrateDB.js"></script>
-  <script type="module" defer src="./assets/js/core/aurifyview2.js"></script>
+ 
 
 
 </body>
